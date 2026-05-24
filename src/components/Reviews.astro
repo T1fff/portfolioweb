@@ -3,13 +3,22 @@ import svgNew from "../assets/new.svg"
 
 const testimonials = [
   {
+    comment: `Implementation Specialist`,
+    author: {
+      name: `NYXN`,
+      pos: `Feb 2026 - Current`,
+      pic: `https://media.licdn.com/dms/image/v2/D4E0BAQFysUZz5BVkOQ/company-logo_200_200/B4EZ5MWFp9HEAI-/0/1779397319587/double_v_partners_logo?e=1781136000&v=beta&t=6-W0XeF230LC-oaliVaQOP75sN0ubzW-likjofNhNpI`,
+    },
+    cls: `rotate-1`,
+  },
+  {
     comment: `Product Analyst`,
     author: {
       name: `Tumipay`,
       pos: `Jan 2025 - Current`,
       pic: `https://colombiafintech.co/wp-content/uploads/2025/06/tumi_pay.png`,
     },
-    cls: `rotate-2 -translate-y-10`,
+    cls: `-rotate-1 -translate-y-4 translate-x-8`,
   },
   {
     comment: `Frontend Developer`,
@@ -18,7 +27,7 @@ const testimonials = [
       pos: `Sept 2024 - Jan 2025`,
       pic: `https://colombiafintech.co/wp-content/uploads/2025/06/tumi_pay.png`,
     },
-    cls: `-rotate-2 -translate-x-10  z-5`,
+    cls: `rotate-2 -translate-y-8 -translate-x-4`,
   },
   {
     comment: `Frontend Engineer`,
@@ -27,52 +36,46 @@ const testimonials = [
       pos: `Aug 2023 - Sept 2024`,
       pic: `https://s3.us-east-1.amazonaws.com/cdn.designcrowd.com/blog/75-generic-logos-to-impress-your-market/square-link-monoline-by-azus-brandcrowd.png`,
     },
-    cls: `rotate-2 translate-x-5 z-5`,
+    cls: `-rotate-1 -translate-y-12 translate-x-6`,
   },
   {
-    comment: `Frontend Intern `,
+    comment: `Frontend Intern`,
     author: {
       name: `Softserve Project Lab`,
       pos: `Dec 2022 - Mar 2023`,
       pic: `https://media.licdn.com/dms/image/v2/D4D0BAQGtV44Uyhqr1w/company-logo_200_200/company-logo_200_200/0/1689185073400/softserve_logo?e=2147483647&v=beta&t=G0pHMiyuCarTOiWV7kqnx2fJNy6g5p4_Tjx7BclWCYs`,
     },
-    cls: `-rotate-2 translate-y-10 md:translate-y-15`,
+    cls: `rotate-1 -translate-y-16 -translate-x-3`,
   },
 ]
 ---
 
 <section>
-  <div class="max-w-4xl mx-auto pb-20 px-10 overflow-hidden">
-    <div class="grid grid-cols-1 md:grid-cols-2">
-      <div class="flex relative">
-        <h1 class="text-3xl">
-          My experience
-        </h1>
-        <img
-          src={svgNew.src}
-          alt="arrow"
-          width="40"
-          class="absolute -right-3 md:-right-10 bottom-0"
-        />
-      </div>
+  <div class="max-w-2xl mx-auto pb-20 px-10 overflow-hidden">
+    <div class="flex relative">
+      <h1 class="text-3xl">My experience</h1>
+      <img
+        src={svgNew.src}
+        alt="arrow"
+        width="40"
+        class="absolute -right-3 md:-right-10 bottom-0"
+      />
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 py-30">
+    <div class="flex flex-col pt-16">
       {
         testimonials.map((item) => (
           <div
-            class={`flex flex-col gap-3 p-5 pr-15 bg-white border-2 shadow-[6px_6px_0px_rgba(0,0,0,0.3)] ${item.cls}`}
+            class={`flex flex-col gap-3 p-5 m-5 pr-15 bg-white border-2 shadow-[6px_6px_0px_rgba(0,0,0,0.3)] w-90% ${item.cls}`}
           >
             <p>{item.comment}</p>
             <div class="flex items-center gap-2">
-              <div>
-                <div class="size-11 rounded-full border overflow-hidden">
-                  <img
-                    src={item.author.pic}
-                    alt=""
-                    class="w-full h-full object-cover"
-                  />
-                </div>
+              <div class="size-11 rounded-full border overflow-hidden shrink-0">
+                <img
+                  src={item.author.pic}
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h3 class="font-medium">{item.author.name}</h3>
